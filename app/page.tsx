@@ -7,8 +7,7 @@ import CurrencyConverter from "@/components/currency-converter"
 import QrScanner from "@/components/qr-scanner"
 import SnakeGame from "@/components/snake-game"
 import NoteApp from "@/components/note-app"
-import ReligiousTexts from "@/components/religious-texts"
-import { CloudSun, CalculatorIcon, DollarSign, ScanLine, Gamepad2, FileText, BookOpen } from "lucide-react"
+import { CloudSun, CalculatorIcon, DollarSign, ScanLine, Gamepad2, FileText } from "lucide-react"
 
 export default function Home() {
   return (
@@ -16,7 +15,7 @@ export default function Home() {
       <h1 className="text-3xl font-bold mb-6 text-center">All-in-One Utility App</h1>
 
       <Tabs defaultValue="dashboard" className="w-full">
-        <TabsList className="grid grid-cols-4 md:grid-cols-8 mb-4">
+        <TabsList className="grid grid-cols-3 md:grid-cols-7 mb-4">
           <TabsTrigger value="dashboard">Dashboard</TabsTrigger>
           <TabsTrigger value="weather">Weather</TabsTrigger>
           <TabsTrigger value="calculator">Calculator</TabsTrigger>
@@ -24,7 +23,6 @@ export default function Home() {
           <TabsTrigger value="scanner">Scanner</TabsTrigger>
           <TabsTrigger value="game">Game</TabsTrigger>
           <TabsTrigger value="notes">Notes</TabsTrigger>
-          <TabsTrigger value="religious">Religious</TabsTrigger>
         </TabsList>
 
         <TabsContent value="dashboard" className="mt-0">
@@ -34,35 +32,35 @@ export default function Home() {
               description="Check current weather conditions"
               icon={<CloudSun className="h-5 w-5 text-primary" />}
             />
+
             <DashboardCard
               title="Calculator"
               description="Perform quick calculations"
               icon={<CalculatorIcon className="h-5 w-5 text-primary" />}
             />
+
             <DashboardCard
               title="Currency Converter"
               description="Convert between currencies"
               icon={<DollarSign className="h-5 w-5 text-primary" />}
             />
+
             <DashboardCard
               title="QR Scanner"
               description="Scan QR codes and barcodes"
               icon={<ScanLine className="h-5 w-5 text-primary" />}
             />
+
             <DashboardCard
               title="Snake Game"
               description="Play the classic snake game"
               icon={<Gamepad2 className="h-5 w-5 text-primary" />}
             />
+
             <DashboardCard
               title="Notes"
               description="Take and save quick notes"
               icon={<FileText className="h-5 w-5 text-primary" />}
-            />
-            <DashboardCard
-              title="Religious Texts"
-              description="Read Quran and Bible passages"
-              icon={<BookOpen className="h-5 w-5 text-primary" />}
             />
           </div>
         </TabsContent>
@@ -135,18 +133,6 @@ export default function Home() {
             </CardHeader>
             <CardContent>
               <NoteApp />
-            </CardContent>
-          </Card>
-        </TabsContent>
-
-        <TabsContent value="religious" className="mt-0">
-          <Card>
-            <CardHeader>
-              <CardTitle>Religious Texts</CardTitle>
-              <CardDescription>Read Quran and Bible passages</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ReligiousTexts />
             </CardContent>
           </Card>
         </TabsContent>
